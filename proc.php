@@ -14,13 +14,13 @@ exec("python3 procpy.py ".$frame." ".$tmp." ".$country." ".$mode);
 
 if ("multi" == $mode)
 {
-exec("ffmpeg -i ".$tmp."/%d_b.png -i ".$tmp."/%d_a.png -i ".$tmp."/a.wav -vcodec libx264 -map 0 -map 1 -map 2 -f avi ".$tmp."videodone.avi");
+exec("ffmpeg -i ".$tmp."/%d_b.png -i ".$tmp."/%d_a.png -i ".$tmp."/a.wav -vcodec libx264 -acodec copy -map 0 -map 1 -map 2 -f avi ".$tmp."/videodone.avi");
 }
 else
 {
-exec("ffmpeg -i ".$tmp."/%d_a.png -i ".$tmp."/a.wav -vcodec libx264 -f avi ".$tmp."videodone.avi");
+exec("ffmpeg -i ".$tmp."/%d_a.png -i ".$tmp."/a.wav -vcodec libx264 -f avi ".$tmp."/videodone.avi");
 }
 header("Content-Description: File Transfer"); 
 header("Content-Type: application/octet-stream"); 
 header("Content-Disposition: attachment; filename=\"videodone.avi\"");
-readfile($tmp."videodone.avi");
+readfile($tmp."/videodone.avi");
