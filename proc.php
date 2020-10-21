@@ -1,6 +1,7 @@
 <?php
 set_time_limit(0);
 $tmp = "./tmp";
+exec("mkdir ".$tmp);
 // $uploadfile = $tmp."/".$_FILES["userfile"]["name"];
 if (!move_uploaded_file($_FILES["userfile"]["tmp_name"],$tmp."/video"))
 {
@@ -24,3 +25,4 @@ header("Content-Description: File Transfer");
 header("Content-Type: application/octet-stream"); 
 header("Content-Disposition: attachment; filename=\"videodone.avi\"");
 readfile($tmp."/videodone.avi");
+exec("rm -r ".$tmp);
