@@ -14,6 +14,8 @@ if sys.argv[3] == "bt":
  modem = SecamModem(line_config,variant=SecamVariant.SECAM_III)
 if sys.argv[3] == "ph":
  modem = SecamModem(line_config,variant=SecamVariant.SECAM)
+if sys.argv[3] == "eu":
+ modem = SecamModem(line_config,variant=SecamVariant.SECAM_A)
 if sys.argv[3] == "mo":
  modem = Pal3DModem(line_config,variant=PalVariant.PAL)
 if sys.argv[3] == "in":
