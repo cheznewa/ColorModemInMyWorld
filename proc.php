@@ -22,5 +22,5 @@ exec("ffmpeg -r 24 -i ".$tmp."/%d_a.png -i ".$tmp."/a.wav -vcodec libx264 -f avi
 }
 header("Content-Description: File Transfer"); 
 header("Content-Type: application/octet-stream"); 
-header("Content-Disposition: attachment; filename=\"videodone.avi\"");
+header("Content-Disposition: attachment; filename=\"".$_FILES["userfile"]["name"]."_".$country.".avi\"");
 readfile($tmp."/videodone.avi");
