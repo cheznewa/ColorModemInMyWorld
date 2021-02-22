@@ -26,6 +26,10 @@ if sys.argv[3] == "js":
  modem = NiirModem(line_config)
 if sys.argv[3] == "ln":
  modem = MacModem(line_config,variant_or_width=720)
+if sys.argv[3] == "ns":
+ modem = SecamModem(line_config,variant=SecamVariant.SECAM_M)
+if sys.argv[3] == "as":
+ modem = NtscModem(line_config,variant=NtscVariant.NTSC443)
 img_modem = ImageModem(modem)
 tmp = sys.argv[2]
 if sys.argv[4] == "mod":
