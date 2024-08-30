@@ -42,7 +42,7 @@ if sys.argv[4] == "mod":
 if sys.argv[4] == "demod":
  for n in range(1,int(sys.argv[1])+1):
   img = Image.open("%s/%s.png" %(tmp,n))
-  img = img_modem.demodulate(img,n+1)
+  img = img_modem.demodulate(img,n+3)
   img.save("%s/%s_a.png" %(tmp,n))
 if sys.argv[4] == "modem":
  for n in range(1,int(sys.argv[1])+1):
